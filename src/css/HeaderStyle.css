@@ -1,0 +1,9 @@
+.bg-dark-header {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.padding-header {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}

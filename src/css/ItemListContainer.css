@@ -1,0 +1,17 @@
+.padding-container {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.margin-container {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.container-ItemListContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
