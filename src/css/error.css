@@ -1,0 +1,38 @@
+.body-error{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .h1-error{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  .section-error{
+    padding: 4rem 2rem;
+  }
+  
+  .section-error .error{
+    font-size: 150px;
+    color: #E3E3E3;
+    text-shadow: 
+      1px 1px 1px black,    
+      2px 2px 1px black,
+      3px 3px 1px black,
+      4px 4px 1px black,
+      5px 5px 1px black,
+      6px 6px 1px black,
+      7px 7px 1px black,
+      8px 8px 1px #00593E,
+      25px 25px 8px rgba(0,0,0, 0.2);
+  }
+  
+  .page{
+    margin: 2rem 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+  }
