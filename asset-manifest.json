@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-coder-house/static/css/main.970faa1e.css",
-    "main.js": "/react-coder-house/static/js/main.efa93bd0.js",
+    "main.css": "/react-coder-house/static/css/main.220fb563.css",
+    "main.js": "/react-coder-house/static/js/main.acb76fb4.js",
     "static/js/787.126116dd.chunk.js": "/react-coder-house/static/js/787.126116dd.chunk.js",
     "static/media/logoB.svg": "/react-coder-house/static/media/logoB.958e7d840a62824b0702aa1b181b51d9.svg",
     "index.html": "/react-coder-house/index.html",
     "static/media/cart-fill.svg": "/react-coder-house/static/media/cart-fill.a389ac9212fbb81d425020d2b4cde2b5.svg",
-    "main.970faa1e.css.map": "/react-coder-house/static/css/main.970faa1e.css.map",
-    "main.efa93bd0.js.map": "/react-coder-house/static/js/main.efa93bd0.js.map",
+    "main.220fb563.css.map": "/react-coder-house/static/css/main.220fb563.css.map",
+    "main.acb76fb4.js.map": "/react-coder-house/static/js/main.acb76fb4.js.map",
     "787.126116dd.chunk.js.map": "/react-coder-house/static/js/787.126116dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.970faa1e.css",
-    "static/js/main.efa93bd0.js"
+    "static/css/main.220fb563.css",
+    "static/js/main.acb76fb4.js"
   ]
 }
