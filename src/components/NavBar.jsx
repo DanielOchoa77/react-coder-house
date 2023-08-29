@@ -8,7 +8,7 @@ import ItemListContainer from './ItemListContainer.jsx';
 import { Error404 } from './Error404.jsx';
 import data from "../data/products.json";
 
-import { Routes, Route, NavLink, BrowserRouter } from "react-router-dom";
+import { Routes, Route, NavLink, BrowserRouter ,HashRouter} from "react-router-dom";
 import ItemListDetail from './ItemListDetail';
 
 export default function MainNavBar() {
@@ -19,7 +19,7 @@ export default function MainNavBar() {
   const categoriesMenu = Array.from(listaCategorias).map(JSON.parse);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
           <Navbar.Brand as={NavLink} to={`/home`}>
@@ -33,10 +33,10 @@ export default function MainNavBar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <NavLink className="nav-link" to={`/home`} key={"inicio"}>Inicio</NavLink>
+              <NavLink className="nav-link" to={`/react-coder-house/home`} key={"inicio"}>Inicio</NavLink>
               <NavDropdown title="Productos" id="navbarScrollingDropdown">
                 {categoriesMenu.map(category => (
-                  <NavDropdown.Item as={NavLink} key={"nv_" + category.categoria} className="nav-link dropdown-item" to={`/category/${category.categoriaSearch}`}>
+                  <NavDropdown.Item as={NavLink} key={"nv_" + category.categoria} className="nav-link dropdown-item" to={`/react-coder-house/category/${category.categoriaSearch}`}>
                     {category.categoria}
                   </NavDropdown.Item>
                 ))}
@@ -60,7 +60,7 @@ export default function MainNavBar() {
         <Route path="*" element={<Error404 />} />
       </Routes>
 
-    </BrowserRouter>
+    </HashRouter>
 
   );
 }
