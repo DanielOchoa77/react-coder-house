@@ -9,7 +9,7 @@ import { Error404 } from './Error404.jsx';
 import data from "../data/products.json";
 
 import { Routes, Route, NavLink, BrowserRouter } from "react-router-dom";
-import ItemListDetail from './ItemListDetail';
+import ItemDetailContainer from './ItemDetailContainer';
 
 export default function MainNavBar() {
   const categories = data.map((producto) =>
@@ -22,7 +22,7 @@ export default function MainNavBar() {
     <BrowserRouter>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <Navbar.Brand as={NavLink} to={`/home`}>
+          <Navbar.Brand as={NavLink} to={`/`}>
             <img src={logo} alt="logo" height='40' />
             Shopping Empire
           </Navbar.Brand>
@@ -55,7 +55,7 @@ export default function MainNavBar() {
         />
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
 
-        <Route path="/item/:id" element={<ItemListDetail />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
 
         <Route path="*" element={<Error404 />} />
       </Routes>

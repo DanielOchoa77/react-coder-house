@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ItemCount from './ItemCount';
 
 export default function CardDetail(props) {
 	const { product } = props;
@@ -17,6 +18,9 @@ export default function CardDetail(props) {
 											<h5 className="fw-bolder">{product.nombre}</h5>
 											${product.precio}
 										</div>
+									</div>
+									<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
+										<ItemCount stock={product.stock}></ItemCount>
 									</div>
 
 									<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
@@ -69,6 +73,9 @@ export default function CardDetail(props) {
 											</div>
 										</div>
 										<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
+											<ItemCount stock={product.stock}></ItemCount>
+										</div>
+										<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
 											<Link to={`/home`}>
 												<button type="button" className="btn btn-outline-dark mt-auto">
 													Volver
@@ -88,6 +95,9 @@ export default function CardDetail(props) {
 												<span className="text-muted text-decoration-line-through">${product.precio}</span>
 												-${product.precioPromo}
 											</div>
+										</div>
+										<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
+											<ItemCount stock={product.stock}></ItemCount>
 										</div>
 										<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
 											<Link to={`/home`}>

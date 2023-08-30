@@ -7,7 +7,7 @@ export default function CardItem(props) {
 		<>
 			{data.map(prod => (
 				!prod.promo ?
-					<div className="col mb-5"  key={"item_" + prod.id}>
+					<div className="col mb-5"  key={"item1_" + prod.id}>
 						<div className="card h-100">
 							<img className="card-img-top" src={prod.img} alt="..." />
 							<div className="card-body p-4">
@@ -26,7 +26,7 @@ export default function CardItem(props) {
 							</div>
 						</div>
 					</div> : prod.promo && prod.recomendado ?
-						<div className="col mb-5">
+						<div className="col mb-5" key={"item2_" + prod.id}>
 							<div className="card h-100">
 								<div className="badge bg-dark text-white position-absolute" style={{ top: '0.5rem', right: '0.5rem' }}>Promo
 								</div>
@@ -75,7 +75,7 @@ export default function CardItem(props) {
 								</div>
 							</div>
 						</div> : prod.promo && !prod.recomendado ?
-							<div className="col mb-5">
+							<div className="col mb-5" key={"item_3" + prod.id}>
 								<div className="card h-100">
 									<div className="badge bg-dark text-white position-absolute" style={{ top: '0.5rem', right: '0.5rem' }}>Promo
 									</div>

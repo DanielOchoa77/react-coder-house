@@ -5,7 +5,7 @@ import '../css/ItemListContainer.css';
 import CardDetail from './CardDetail.jsx';
 import data from "../data/products.json";
 
-export default function ItemListDetail() {
+export default function ItemDetailContainer() {
 
   const [productId, setProductId] = useState(null)
   const { id } = useParams()
