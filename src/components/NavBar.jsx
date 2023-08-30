@@ -49,6 +49,7 @@ export default function MainNavBar() {
 
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
+        <Route path="/react-coder-house" element={<ItemListContainer />} />
         <Route
           path="/home"
           element={<ItemListContainer />}
