@@ -1,21 +1,42 @@
 import { useParams } from "react-router-dom"
 import CardItem from './CardItem';
-import data from "../data/products.json"
 import { useEffect, useState } from "react";
+import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
 
 export const CardProduct = () => {
 	const [products, setProducts] = useState([]);
 	const { categoryId } = useParams();
 
 	useEffect(() => {
+		const db = getFirestore();
+
+		const refCollection = collection(db, "productos");
+
 		if (categoryId) {
-			const productsFilteredByCategory = data.filter(
-				product => product.categoriaSearch === categoryId
-			)
-			setProducts(productsFilteredByCategory)
+			const productsByCategory = query(collection(db, "productos"),
+				where("categoriaSearch", "==", categoryId));
+
+			getDocs(productsByCategory).then((snapshot) => {
+				if (snapshot.size > 0) {
+					setProducts(snapshot.docs.map((doc) => {
+						return { id: doc.id, ...doc.data() }
+					}));
+				} else {
+					setProducts([]);
+				}
+			});
 		} else {
-			setProducts(data)
+			getDocs(refCollection).then((snapshot) => {
+				if (snapshot.size > 0) {
+					setProducts(snapshot.docs.map((doc) => {
+						return { id: doc.id, ...doc.data() }
+					}));
+				} else {
+					setProducts([]);
+				}
+			});
 		}
+
 	}, [categoryId])
 
 	return (

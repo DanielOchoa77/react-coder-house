@@ -3,20 +3,27 @@ import { useParams } from "react-router-dom"
 import Container from 'react-bootstrap/Container';
 import '../css/ItemListContainer.css';
 import CardDetail from './CardDetail.jsx';
-import data from "../data/products.json";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
 
 export default function ItemDetailContainer() {
 
-  const [productId, setProductId] = useState(null)
-  const { id } = useParams()
+  const [productId, setProductId] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
 
   useEffect(() => {
+    const db = getFirestore();
 
-    setProductId(data.find(product => product.id === Number(id)))
+    const refDoc = doc(db, "productos", id);
+
+    getDoc(refDoc).then((snapshot) => {
+      setProductId({ id: snapshot.id, ...snapshot.data() });
+    }).finally(()=> setLoading(false));
+
   }, [id])
 
-  if (!productId) return <div>Loading...</div>
+  if (loading) return <div>Loading...</div>
   return (
 
     <Container fluid >
