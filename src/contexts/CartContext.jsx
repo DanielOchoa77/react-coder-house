@@ -11,7 +11,24 @@ export const CartProvider = ({ children }) => {
 
 
     const addItem = (product, quantity) => {
-        setItems(prev => [...prev, { ...product, quantity }])
+        const alreadyExists = items.some(item => item.id === product.id);
+
+        if (!alreadyExists) {
+            setItems(prev => [...prev, { ...product, quantity }])
+        } else {
+            const actualizarProductos = items.map(item => {
+                if (item.id === product.id) {
+                    return {
+                        ...item,
+                        quantity: item.quantity + quantity,
+                    }
+                } else {
+                    return item;
+                }
+            })
+            setItems(actualizarProductos);
+        }
+
         SwalCart.fire({
             position: 'center',
             icon: 'success',
@@ -29,7 +46,7 @@ export const CartProvider = ({ children }) => {
 
         SwalCart.fire({
             title: 'Estas seguro?',
-            text: "Se eliminara el producto # " + product.id + " - " + product.nombre + " del carrito!",
+            text: "Se eliminara el producto "  + product.nombre + " del carrito!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

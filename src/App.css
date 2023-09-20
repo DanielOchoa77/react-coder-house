@@ -32,14 +32,32 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.dropdown-item.active, .dropdown-item:active {
-color: white !important;
-background-color: #212529 !important;
+.dropdown-item.active,
+.dropdown-item:active {
+  color: white !important;
+  background-color: #212529 !important;
+}
+
+.img-cart-empty {
+  font-size: 8rem;
+  color: #212529;
+}
+
+.text-cart-empty {
+  font-size: 2rem;
+}
+
+.text-cart-button {
+  justify-content: space-evenly !important;
+}
+.padding-container-cart{
+  padding-bottom: 3rem !important;
 }
 
 

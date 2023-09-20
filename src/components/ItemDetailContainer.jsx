@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import '../css/ItemListContainer.css';
 import CardDetail from './CardDetail.jsx';
 import { getFirestore, getDoc, doc } from "firebase/firestore";
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 
 export default function ItemDetailContainer() {
 
@@ -19,11 +21,27 @@ export default function ItemDetailContainer() {
 
     getDoc(refDoc).then((snapshot) => {
       setProductId({ id: snapshot.id, ...snapshot.data() });
-    }).finally(()=> setLoading(false));
+    }).finally(() => setLoading(false));
 
   }, [id])
 
-  if (loading) return <div>Loading...</div>
+  if (loading) {
+    return (
+      <Container fluid >
+        <Button variant="dark" disabled>
+          <Spinner
+            as="span"
+            animation="grow"
+            size="sm"
+            role="status"
+            aria-hidden="true"
+          />
+          Cargando...
+        </Button>
+      </Container>
+    )
+  }
+
   return (
 
     <Container fluid >

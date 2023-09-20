@@ -2,10 +2,14 @@ import { useParams } from "react-router-dom"
 import CardItem from './CardItem';
 import { useEffect, useState } from "react";
 import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
+import Container from 'react-bootstrap/Container';
 
 export const CardProduct = () => {
 	const [products, setProducts] = useState([]);
 	const { categoryId } = useParams();
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const db = getFirestore();
@@ -24,7 +28,7 @@ export const CardProduct = () => {
 				} else {
 					setProducts([]);
 				}
-			});
+			}).finally(() => setLoading(false));;
 		} else {
 			getDocs(refCollection).then((snapshot) => {
 				if (snapshot.size > 0) {
@@ -34,10 +38,27 @@ export const CardProduct = () => {
 				} else {
 					setProducts([]);
 				}
-			});
+			}).finally(() => setLoading(false));;
 		}
 
 	}, [categoryId])
+
+	if (loading) {
+		return (
+		  <Container fluid >
+			<Button variant="dark" disabled>
+			  <Spinner
+				as="span"
+				animation="grow"
+				size="sm"
+				role="status"
+				aria-hidden="true"
+			  />
+			  Cargando...
+			</Button>
+		  </Container>
+		)
+	  }
 
 	return (
 

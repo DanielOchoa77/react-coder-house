@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext.jsx';
 
 export default function CardCartLastUnit(selectProduct) {
-	const { product} = selectProduct;
+	const { product } = selectProduct;
 	const { removeItem } = useContext(CartContext);
 
 	return (
@@ -12,7 +12,12 @@ export default function CardCartLastUnit(selectProduct) {
 				<div className="card-body p-4">
 					<div className="text-center">
 						<h5 className="fw-bolder">{product.nombre}</h5>
-						${product.precio}
+					</div>
+					<div className="text-center">
+						<span>${product.precio}</span>
+					</div>
+					<div className="text-center">
+						Cantidad: <span>{product.quantity}</span>
 					</div>
 				</div>
 				<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">

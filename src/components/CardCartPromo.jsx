@@ -14,8 +14,13 @@ export default function CardCartPromo(selectProduct) {
 			<div className="card-body p-4">
 				<div className="text-center">
 					<h5 className="fw-bolder">{product.nombre}</h5>
-					<span className="text-muted text-decoration-line-through">${product.precio}</span>
+				</div>
+				<div className="text-center">
+					<span className="text-muted text-decoration-line-through"> ${product.precio}</span>
 					-${product.precioPromo}
+				</div>
+				<div className="text-center">
+					Cantidad: <span>{product.quantity}</span>
 				</div>
 			</div>
 			<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">

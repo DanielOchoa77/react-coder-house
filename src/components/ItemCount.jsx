@@ -38,8 +38,6 @@ export default function ItemCount(datos) {
         </button>
       </div>
 
-    
-
       <div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
         <Link to={`/home`}>
           <button type="button" className="btn btn-outline-dark mt-auto">

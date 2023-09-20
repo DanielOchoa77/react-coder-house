@@ -41,9 +41,14 @@ export default function CardCartPopular(selectProduct) {
 								</svg>
 							</div>
 						</div>
-
-						<span className="text-muted text-decoration-line-through">${product.precio}</span>
-						-${product.precioPromo}
+						<div className="text-center">
+							<span className="text-muted text-decoration-line-through"> ${product.precio}</span>
+							-${product.precioPromo}
+						</div>
+						
+						<div className="text-center">
+							Cantidad: <span>{product.quantity}</span>
+						</div>
 					</div>
 				</div>
 				<div className="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
