@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 export const CartContext = createContext([]);
 

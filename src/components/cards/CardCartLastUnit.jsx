@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext.jsx';
+import { CartContext } from '../../contexts/CartContext.jsx';
 
 export default function CardCartLastUnit(selectProduct) {
 	const { product } = selectProduct;

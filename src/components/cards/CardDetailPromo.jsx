@@ -1,4 +1,4 @@
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount';
 
 export default function CardDetailPromo(selectProduct) {
 	const { product } = selectProduct;

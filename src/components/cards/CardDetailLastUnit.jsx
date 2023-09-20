@@ -1,4 +1,4 @@
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount';
 
 export default function CardDetailLastUnit(selectProduct) {
 	const { product } = selectProduct;

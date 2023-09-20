@@ -1,6 +1,6 @@
-import CardLastUnit from './CardLastUnit.jsx';
-import CardPromo from './CardPromo.jsx';
-import CardPopular from './CardPopular.jsx';
+import CardLastUnit from './cards/CardLastUnit.jsx';
+import CardPromo from './cards/CardPromo.jsx';
+import CardPopular from './cards/CardPopular.jsx';
 
 
 export default function CardItem(props) {

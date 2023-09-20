@@ -1,6 +1,6 @@
-import CardDetailLastUnit from './CardDetailLastUnit.jsx';
-import CardDetailPopular from './CardDetailPopular.jsx';
-import CardDetailPromo from './CardDetailPromo.jsx';
+import CardDetailLastUnit from './cards/CardDetailLastUnit.jsx';
+import CardDetailPopular from './cards/CardDetailPopular.jsx';
+import CardDetailPromo from './cards/CardDetailPromo.jsx';
 
 export default function CardDetail(props) {
 	const { product } = props;

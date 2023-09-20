@@ -1,9 +1,9 @@
 import { Form } from "react-bootstrap";
 import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext.jsx';
-import CardCartlLastUnit from './CardCartLastUnit.jsx';
-import CardCartPopular from './CardCartPopular.jsx';
-import CardCartPromo from './CardCartPromo.jsx';
+import CardCartlLastUnit from './cards/CardCartLastUnit.jsx';
+import CardCartPopular from './cards/CardCartPopular.jsx';
+import CardCartPromo from './cards/CardCartPromo.jsx';
 import CartModalPayment from './CartModalPayment.jsx';
 import Container from 'react-bootstrap/Container';
 import { Link } from "react-router-dom";
@@ -84,13 +84,14 @@ export const Cart = () => {
                     </Link>
 
                     <button id="paymentButton" type="button" className="btn btn-success" onClick={() => setModalShow(true)}><i className="bi bi-credit-card">
-                    </i>Pagar</button>
+                    </i>Comprar</button>
                 </div>
             </Container>
 
             <CartModalPayment
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                valorTotal={valorTotal}
             />
 
         </>)
