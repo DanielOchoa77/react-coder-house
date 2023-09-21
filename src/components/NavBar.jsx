@@ -29,7 +29,7 @@ export default function MainNavBar() {
     }).finally(() => setLoading(false));
 
 
-  }, [products])
+  }, [])
 
   if (loading) {
     return (
@@ -52,7 +52,7 @@ export default function MainNavBar() {
     ({ "categoria": producto.categoria, "categoriaSearch": producto.categoriaSearch }));
 
   const listaCategorias = new Set(categories.map(JSON.stringify));
-  
+
   const categoriesMenu = Array.from(listaCategorias).map(JSON.parse);
 
   return (
