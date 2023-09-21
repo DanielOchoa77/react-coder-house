@@ -51,26 +51,9 @@ export default function MainNavBar() {
   const categories = products.map((producto) =>
     ({ "categoria": producto.categoria, "categoriaSearch": producto.categoriaSearch }));
 
-  const listaCategorias = new Set(categories.map(JSON.stringify))
+  const listaCategorias = new Set(categories.map(JSON.stringify));
+  
   const categoriesMenu = Array.from(listaCategorias).map(JSON.parse);
-
-  if (loading) {
-    return (
-      <Container fluid >
-        <Button variant="dark" disabled>
-          <Spinner
-            as="span"
-            animation="grow"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          />
-          Cargando...
-        </Button>
-      </Container>
-    )
-  }
-
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
