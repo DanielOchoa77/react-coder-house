@@ -81,7 +81,7 @@ export default function CartModalPayment(props) {
       </Modal.Header>
       <Modal.Body>
         <FloatingLabel
-          controlId="floatingNombre"
+          htmlFor="floatingNombre"
           label="Nombre"
           className="mb-3"
         >
@@ -89,33 +89,36 @@ export default function CartModalPayment(props) {
             onChange={handleChangeForm}
             value={formValues.name}
             name='name'
+            id='floatingNombre'
           />
         </FloatingLabel>
         <FloatingLabel
-          controlId="floatingEmail"
           label="Correo electronico"
           className="mb-3"
+          htmlFor="floatingEmail"
         >
           <Form.Control type="email" placeholder="name@example.com"
             onChange={handleChangeForm}
             value={formValues.email}
             name='email'
+            id='floatingEmail'
           />
         </FloatingLabel>
         <FloatingLabel
-          controlId="floatingPhone"
+          htmlFor="floatingPhone"
           label="Telefono"
           className="mb-3">
           <Form.Control type="number" placeholder="Telefono"
             onChange={handleChangeForm}
             value={formValues.phone}
             name='phone'
+            id='floatingPhone'
           />
         </FloatingLabel>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
-        <Button variant="success" onClick={sendOrder}>Comprar</Button>
+        <Button id='close' variant="secondary" onClick={props.onHide}>Cerrar</Button>
+        <Button id='buy' variant="success" onClick={sendOrder}>Comprar</Button>
       </Modal.Footer>
     </Modal>
   );

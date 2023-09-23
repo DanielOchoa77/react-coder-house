@@ -48,10 +48,10 @@ export const Cart = () => {
                             </div>
                         </div>
                         <div className="form-group row">
-                            <Form.Label className="col-sm-8 col-form-label" htmlFor="cantArt">Subtotal:</Form.Label>
+                            <Form.Label className="col-sm-8 col-form-label" htmlFor="subtotal">Subtotal:</Form.Label>
                             <div className="col-sm-4">
                                 <Form.Control type="number" readOnly className="form-control-plaintext"
-                                    id="cantArt" placeholder="subtotal"
+                                    id="subtotal" placeholder="subtotal"
                                     value={monto}
                                 />
                             </div>
@@ -60,7 +60,7 @@ export const Cart = () => {
                             <Form.Label className="col-sm-8 col-form-label" htmlFor="iva">Iva:</Form.Label>
                             <div className="col-sm-4">
                                 <Form.Control type="number" readOnly className="form-control-plaintext"
-                                    id="cantArt" placeholder="iva"
+                                    id="iva" placeholder="iva"
                                     value={iva}
                                 />
                             </div>
@@ -68,7 +68,7 @@ export const Cart = () => {
                         <div className="form-group row">
                             <Form.Label className="col-sm-8 col-form-label" htmlFor="total">Total:</Form.Label>
                             <div className="col-sm-4">
-                                <Form.Control type="number" readOnly className="form-control-plaintext"
+                                <Form.Control  type="number" readOnly className="form-control-plaintext"
                                     id="total" placeholder="valorTotal"
                                     value={valorTotal}
                                 />
@@ -79,7 +79,7 @@ export const Cart = () => {
 
                 <div className="modal-footer text-cart-button ">
                     <Link to={`/home`}>
-                        <button type="button" className="btn btn-primary btn-close-color">Seguir
+                        <button id="keep-buying" type="button" className="btn btn-primary btn-close-color">Seguir
                             comprando</button>
                     </Link>
 
